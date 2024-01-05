@@ -1,4 +1,3 @@
-import { useAuthContext } from "@/context/AuthContext";
 import "./Auth.scss";
 import { useState } from "react";
 import { forgotPasswordUser } from "@/api/auth";
@@ -12,23 +11,18 @@ type PropsType = {
 
 const ForgotPassword = ({setCurrent, setResetToken}: PropsType) => {
   const [loading, setLoading] = useState(false);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { setLoadingAuth }: any = useAuthContext();
     const [email, setEmail] = useState<string>("");
 
   const runForgotPassword = async () => {
-    setLoadingAuth(true);
     setLoading(true);
     const forgetResult = await forgotPasswordUser({ email });
     if (!forgetResult.success) {
       alert(forgetResult.message);
-      setLoadingAuth(false);
       setLoading(false);
       return;
     }
     setResetToken(forgetResult.data.resetToken);
     setCurrent("reset-password");
-    setLoadingAuth(false);
     setLoading(false);
   }
 

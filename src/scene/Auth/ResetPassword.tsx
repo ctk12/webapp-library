@@ -1,4 +1,3 @@
-import { useAuthContext } from "@/context/AuthContext";
 import "./Auth.scss";
 import { useState } from "react";
 import { resetPasswordUser } from "@/api/auth";
@@ -13,8 +12,6 @@ type PropsType = {
 
 const ResetPassword = ({setCurrent, resetToken}: PropsType) => {
   const [loading, setLoading] = useState(false);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { setLoadingAuth }: any = useAuthContext();
     const [password, setPassword] = useState<string>("");
 
   const runReset = async () => {
@@ -30,18 +27,15 @@ const ResetPassword = ({setCurrent, resetToken}: PropsType) => {
       alert("Wrong password combination, Use letters numbers and special characters");
       return;
     }
-    setLoadingAuth(true);
     setLoading(true);
     const resetResult = await resetPasswordUser(resetToken, { password });
     if (!resetResult.success) {
       alert(resetResult.message);
-      setLoadingAuth(false);
       setLoading(false);
       return;
     }
     alert(resetResult.message);
     setCurrent("login");
-    setLoadingAuth(false);
     setLoading(false);
   }
 
