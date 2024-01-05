@@ -22,6 +22,7 @@ const ForgotPassword = ({setCurrent, setResetToken}: PropsType) => {
     const forgetResult = await forgotPasswordUser({ email });
     if (!forgetResult.success) {
       alert(forgetResult.message);
+      setLoadingAuth(false);
       setLoading(false);
       return;
     }
