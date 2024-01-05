@@ -14,6 +14,10 @@ const ForgotPassword = ({setCurrent, setResetToken}: PropsType) => {
     const [email, setEmail] = useState<string>("");
 
   const runForgotPassword = async () => {
+    if (!email) {
+      alert("Email is required");
+      return;
+    }
     setLoading(true);
     const forgetResult = await forgotPasswordUser({ email });
     if (!forgetResult.success) {
