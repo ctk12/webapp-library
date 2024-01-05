@@ -16,11 +16,11 @@ const Login = ({setCurrent}: {setCurrent: (value: string) => void}) => {
     const navigate = useNavigate();
 
   const runLogin = async () => {
-    setLoading(true);
     if (Object.values(data).filter(value => value === "").length > 0) {
       alert("All fields are required");
       return;
     }
+    setLoading(true);
     const result = await loginAuthUser(data);
     alert(result?.message);
     setLoading(false);

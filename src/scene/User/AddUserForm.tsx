@@ -19,11 +19,11 @@ const AddTransactionForm = ({setModal, update, setFormLoading}: {
     });
 
   const runAddUser = async () => {
-    setFormLoading(true);
     if (Object.values(data).filter(value => value === "").length > 0) {
         alert("All fields are required");
         return;
     }
+    setFormLoading(true);
     const result = await addUsers(data);
     if (result.message.includes("Please log in")) {
       window.location.reload();

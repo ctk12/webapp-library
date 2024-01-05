@@ -35,6 +35,8 @@ const ResetPassword = ({setCurrent, resetToken}: PropsType) => {
     const resetResult = await resetPasswordUser(resetToken, { password });
     if (!resetResult.success) {
       alert(resetResult.message);
+      setLoadingAuth(false);
+      setLoading(false);
       return;
     }
     alert(resetResult.message);
