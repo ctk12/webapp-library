@@ -1,0 +1,46 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+    --primary-orange: #fea013;
+    --primary-orange-hover: #ba4a0c;
+    --primary-red: #d23131;
+
+    --sidebar-background: #111111;
+    --neutral-background-1: #222222;
+    --neutral-background-2: #2d2d2d;
+
+    --text-headings: #f8f8f8;
+    --text-normal: #cbcbcb;
+    --text-muted: #999999;
+    --text-disabled: #707070;
+
+    --borders: #494949;
+
+    --large-text: #3a3731;
+
+    --box-shadow: 0px 12px 28px 0px rgba(22, 22, 22, 0.50);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--neutral-background-1);
+}
+  
+*::-webkit-scrollbar-thumb {
+    background-color: var(--text-normal);
+    border-radius: 6px;
+}
+  

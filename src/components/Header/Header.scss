@@ -1,0 +1,108 @@
+@import "../../styles/mixins";
+
+.header-left {
+    &__p {
+        color: var(--primary-orange, #FEA013);
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 18px; /* 150% */
+        margin: 0;
+    }
+}
+
+.header-logout {
+  display: flex;
+  @include onTablet {
+    display: none;
+  }
+}
+
+.search {
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--borders);
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+    color: var(--text-muted);
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    background: transparent;
+    height: 21;
+    width: 200;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-headings);
+
+    &::placeholder {
+        color: var(--text-muted);
+    }
+  }
+}
+
+.add-button {
+    width: 100px;
+    height: 44px;
+    background-color: var(--primary-orange);
+    border-radius: 8px;
+
+    @include onTablet {
+      width: 90px;
+      margin-right: 12px;
+    }
+}
+
+.import-modal {
+  z-index: 1;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    width: 800px;
+    height: 600px;
+    border-radius: 8px;
+    background: var(--neutral-background-2);
+    box-shadow: var(--box-shadow);
+    padding: 18px 24px;
+
+    & .hr {
+      height: 1px;
+      background-color: var(--borders);
+      margin-bottom: 24px;
+    }
+
+    & .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+
+      &__import-close-icon {
+        color: var(--text-normal);
+        cursor: pointer;
+      }
+    }
+
+    & .body {
+      &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 32px;
+      }
+    }
+  }
+}

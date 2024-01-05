@@ -1,0 +1,8 @@
+.hidden-child {
+    display: none;
+}
+
+.menu-li:hover .hidden-child{
+    display: flex;
+}
+

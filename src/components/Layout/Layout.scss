@@ -1,0 +1,37 @@
+@import "../../styles/mixins";
+
+.sidebar-container {
+    width: 60px;
+    background-color: var(--sidebar-background);
+    position: static;
+    height: 100vh;
+
+    @include onTablet {
+        display: none;
+        position: absolute;
+        z-index: 1;
+    }
+}
+
+.main {
+    background-color: var(--neutral-background-1);
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    &__wrap {
+        width: 100%;  
+    }
+}
+
+.sidebar-button {
+    padding: 6px 8px;
+    right: 20px;
+    top: 25px;
+    border: 2px solid var(--borders);
+    display: none;
+
+    @include onTablet {
+        display: block;
+    }
+}

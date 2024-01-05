@@ -1,0 +1,42 @@
+@import "../../styles/mixins";
+
+.custom-table {
+    width: 100%;
+    padding: 10px 20px;
+    overflow-x: scroll;
+
+    @include onTablet {
+        padding: 5px;
+    }
+
+    color: var(--text-headings);
+
+    &__head {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--text-normal);
+        border-bottom: 1px solid var(--borders);
+    }
+
+    &__body {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-normal);
+    }
+
+    &__head,
+    &__body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-width: 900px;
+
+        & .tr {
+            display: flex;
+            gap: 20px;
+            min-height: 46px;
+            align-items: center;
+            padding: 6px;
+        }
+    }
+}
