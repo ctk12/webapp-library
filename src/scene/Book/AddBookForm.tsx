@@ -26,11 +26,11 @@ const AddBookForm = ({setModal, update, setFormLoading}: {
       window.location.reload();
       return;
     }
+    alert(result?.message);
     if (result?.success) {
       update("", result.data);
+      setModal(false);
     }
-    alert(result?.message);
-    setModal(false);
     setFormLoading(false);
   }
 
