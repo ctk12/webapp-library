@@ -1,5 +1,3 @@
-"use client";
-
 import React, { createContext, useContext, useEffect } from "react";
 import { MainLoader } from "@/shared/AppLoader/MainLoader";
 import { NewUser, Tokens, User } from "@/types/User";
