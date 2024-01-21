@@ -84,7 +84,7 @@ const Transactions = () => {
 
   const fetchUsers = async () => {
     setFetchLoading(true);
-    const result = await getUsers(`?sortBy=createdAt:desc&page=${pagination.page}`);
+    const result = await getUsers(`?sortBy=createdAt:desc&page=${pagination.page}&limit=${pagination.limit}`);
     if (!result.success) {
       if (result.message.includes("Please log in")) {
         window.location.reload();

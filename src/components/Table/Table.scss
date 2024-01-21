@@ -22,6 +22,8 @@
         font-size: 14px;
         font-weight: 500;
         color: var(--text-normal);
+        height: calc(100vh - 280px);
+        overflow-y: scroll;
     }
 
     &__head,
